@@ -1,0 +1,25 @@
+{
+  "name": "search-collector-blueprint",
+  "version": "0.0.1",
+  "description": "SearchHub.io - Search Collector Blueprint",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "typescript": "^4.5.2",
+    "webpack": "^5.61.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "scripts": {
+    "dev": "webpack --mode development --devtool inline-source-map --watch",
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "search-collector": "0.1.37"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
