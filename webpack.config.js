@@ -11,7 +11,7 @@ module.exports = (env, argv) => {
 		module: {
 			rules: [
 				{
-					test: /\.t?j?s$/,
+					test: /^.+\.([tj])s$/,
 					use: {
 						loader: 'babel-loader',
 						options: {
