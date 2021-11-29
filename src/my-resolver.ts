@@ -1,4 +1,4 @@
-import {cookieSessionResolver, Query} from "search-collector";
+import {cookieSessionResolver, Query} from "search-collector/dist";
 
 export const queryResolver = () => {
 	const queryParams = new URLSearchParams(window.location.search);
