@@ -1,4 +1,4 @@
-import {Collector, DefaultWriter, InstantSearchQueryCollector} from "search-collector";
+import {CollectorModule, DefaultWriter, InstantSearchQueryCollector} from "search-collector";
 import {queryResolver, sessionResolver} from "./my-resolver";
 
 const writer = new DefaultWriter({
@@ -11,7 +11,7 @@ const writer = new DefaultWriter({
 	}
 });
 
-const collector = new Collector({
+const collector = new CollectorModule({
 	writer
 });
 
