@@ -1,10 +1,17 @@
-import {CollectorModule, DefaultWriter, InstantSearchQueryCollector} from "search-collector";
+import {CollectorModule, Context, DefaultWriter, Trail} from "search-collector";
 import {queryResolver, sessionResolver} from "./my-resolver";
+
+
+const trail = new Trail(queryResolver, sessionResolver);
+const context = new Context(window, document);
 
 const writer = new DefaultWriter({
 	channel: "my-channel",
-	debug: true,
 	endpoint: "http://localhost:8080",
+	debug: true,
+	sqs: true,
+	trail,
+	context,
 	resolver: {
 		queryResolver,
 		sessionResolver
@@ -12,9 +19,10 @@ const writer = new DefaultWriter({
 });
 
 const collector = new CollectorModule({
-	writer
+	writer,
+	context
 });
 
-collector.add(new InstantSearchQueryCollector("#searchbox"))
+// Checkout out the demo at https://github.com/searchhub/search-collector/tree/master/demo and https://www.searchhub.io/search-collector/demo/ for collector implementation details
 
 collector.start();
